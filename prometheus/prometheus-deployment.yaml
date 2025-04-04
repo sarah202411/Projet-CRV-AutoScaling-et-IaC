@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      serviceAccountName: prometheus  # Assure-toi que le ServiceAccount existe
+      containers:
+      - name: prometheus
+        image: prom/prometheus:v2.31.2
+        args:
+          - "--config.file=/etc/prometheus/prometheus.yml"
+        ports:
+        - containerPort: 9090
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/prometheus  # Monter tout le dossier
+
+      volumes:
+      - name: config-volume
+        configMap:
+          name: prometheus-configmap  # Assurez-vous que ce ConfigMap existe
+

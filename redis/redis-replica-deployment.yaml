@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-replica-deployment
+spec:
+  replicas: 3  # Vous pouvez augmenter ou diminuer le nombre de réplicas
+  selector:
+    matchLabels:
+      app: redis
+      role: replica
+  template:
+    metadata:
+      labels:
+        app: redis
+        role: replica
+    spec:
+      containers:
+        - name: redis
+          image: redis:7.2
+          ports:
+            - containerPort: 6379
+          command:
+            - "redis-server"
+            - "--slaveof"
+            - "redis-master-service"
+            - "6379"  # Nom du service du master Redis et son port
+

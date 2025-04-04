@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-redis
+  template:
+    metadata:
+      labels:
+        app: node-redis
+    spec:
+      containers:
+        - name: node-redis
+          imagePullPolicy: Always
+          image: sarahmouaci/mon-backend:latest  # L'image stockée sur Docker Hub
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PORT
+              value: '8080'
+            - name: REDIS_URL
+              value: "redis://redis-master-service.default.svc.cluster.local:6379"  # Correction de l'URL pour le service Redis Master
+            - name: REDIS_REPLICAS_URL
+              value: "redis://redis-replica-service.default.svc.cluster.local:6379"  # URL correcte pour les réplicas
