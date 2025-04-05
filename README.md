@@ -55,7 +55,7 @@ yarn start
 -------------------------Configuration automatique  ----------------------------
 ```bash
 
-cd ..
+cd Projet-CRV-AutoScaling-et-IaC
 kubectl create namespace monitoring
 chmod +x deploy.sh
 ./deploy.sh
