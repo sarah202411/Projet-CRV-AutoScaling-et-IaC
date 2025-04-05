@@ -77,6 +77,7 @@ Prometheus et Grafana
 
 
 ------------- Configuration manuelle--------------
+
 Pour un déploiement manuelle passer directement a cette partie 
  
 
@@ -131,6 +132,13 @@ yarn start
 ```
 -------------------------------------------------------
 ###5. Configuration des URLs entre Frontend et Backend
+```bash
+# Copie du fichier default.conf dans le pod à l'emplacement de nginx
+kubectl cp default.conf <POD_FRONTEND_NAME>:/etc/nginx/conf.d/default.conf
+
+# Redémarre nginx pour appliquer la nouvelle configuration
+kubectl exec <POD_FRONTEND_NAME> -- nginx -s reload
+```
 
 a. Fichier conf.js (Frontend)
 ```bash
@@ -142,6 +150,12 @@ b. Fichier main.js (Backend)
 Redis URL : 127.0.0.1:6379
 API exposée sur http://<minikube_ip>:<NodePort du backend>
 ```
+### Modification du fichier default.conf (nginx)###
+```bash
+cd frontend/
+
+```
+
 ###6. Monitoring avec Prometheus & Grafana
 a. Creer autre namespace
 ```bash
