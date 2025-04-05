@@ -26,7 +26,7 @@ minikube start
 ```
 
 
-###2. Cloner et lancer deploy.sh
+### 2. Cloner et lancer deploy.sh
 
 ```bash
 git clone https://github.com/sarah202411/Projet-CRV-AutoScaling-et-IaC.git
@@ -81,7 +81,7 @@ Prometheus et Grafana
 Pour un déploiement manuelle passer directement a cette partie 
  
 
-###2. Déploiement de Redis
+### 3. Déploiement de Redis
 
 
 a. Appliquer les fichiers YAML
@@ -111,7 +111,7 @@ b. Appliquer les fichiers YAML
 kubectl apply -f nodejs-deployment.yaml
 kubectl apply -f nodejs-service.yaml
 ```
-###4. Déploiement du Frontend React
+### 4. Déploiement du Frontend React
 
 a. Créer et pousser l'image Docker
 ```bash
@@ -131,7 +131,7 @@ yarn install
 yarn start
 ```
 -------------------------------------------------------
-###5. Configuration des URLs entre Frontend et Backend
+### 5. Configuration des URLs entre Frontend et Backend
 ```bash
 # Copie du fichier default.conf dans le pod à l'emplacement de nginx
 kubectl cp default.conf <POD_FRONTEND_NAME>:/etc/nginx/conf.d/default.conf
@@ -156,7 +156,7 @@ cd frontend/
 
 ```
 
-###6. Monitoring avec Prometheus & Grafana
+### 6. Monitoring avec Prometheus & Grafana
 a. Creer autre namespace
 ```bash
 kubectl create namespace monitoring
