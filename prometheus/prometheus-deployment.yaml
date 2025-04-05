@@ -28,5 +28,5 @@ spec:
       volumes:
       - name: config-volume
         configMap:
-          name: prometheus-configmap  # Assurez-vous que ce ConfigMap existe
+          name: prometheus-config  # Assurez-vous que ce ConfigMap existe
 
