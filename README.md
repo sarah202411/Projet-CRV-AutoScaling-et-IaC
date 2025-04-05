@@ -21,6 +21,7 @@ Ce projet est une application full-stack moderne déployée dans un cluster Kube
 
 ```bash
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo chmod +x /usr/local/bin/minikube
 sudo mv minikube-linux-amd64 /usr/local/bin/minikube
 minikube start
 ```
