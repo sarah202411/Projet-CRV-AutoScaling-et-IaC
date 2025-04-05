@@ -18,12 +18,5 @@ spec:
           image: sarahmouaci/mon-frontend:latest  # Remplacez par l'image Docker de votre application frontend
           ports:
             - containerPort: 80
-          volumeMounts:
-            - name: nginx-config-volume
-              mountPath: /etc/nginx/conf.d/default.conf
-              subPath: default.conf
-      volumes:
-        - name: nginx-config-volume
-          configMap:
-            name: nginx-config
+
 
