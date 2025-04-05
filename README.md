@@ -191,7 +191,7 @@ Grafana : http://<minikube_ip>:<NodePort de Grafana>
 
 
 ---- Structure du projet----
-
+```bash
 
 projet-fullstack/
 │
@@ -235,7 +235,7 @@ projet-fullstack/
 ├── deploy.sh                # Script Bash d’automatisation du déploiement
 └── README.md                # Documentation complète du projet
 
-
+```
 
 
 -------Auteurs--------
