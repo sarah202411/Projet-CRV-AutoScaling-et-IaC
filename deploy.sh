@@ -28,11 +28,12 @@ cd ..
 # 4. Déploiement de Prometheus
 echo "Déploiement de Prometheus..."
 cd prometheus
+kubectl apply -f prometheus-serviceaccount.yaml
 kubectl apply -f prometheus-configmap.yaml
 kubectl apply -f prometheus-deployment.yaml
 kubectl apply -f prometheus-service.yaml
 kubectl apply -f prometheus.yaml
-kubectl apply -f prometheus-serviceaccount.yaml
+
 
 # 5. Déploiement de Node Exporter
 echo "Déploiement de Node Exporter..."
