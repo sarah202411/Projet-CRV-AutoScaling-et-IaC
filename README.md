@@ -173,6 +173,7 @@ kubectl create namespace monitoring
 b. Déploiement de Prometheus
 ```bash
 cd Prometheus
+kubectl apply -f prometheus-serviceaccount.yaml
 kubectl apply -f prometheus-configmap.yaml
 kubectl apply -f prometheus-deployment.yaml
 kubectl apply -f prometheus-service.yaml
@@ -181,7 +182,7 @@ kubectl apply -f node-exporter.yaml
 kubectl apply -f node-exporter-service.yaml
 kubectl apply -f redis-exporter.yaml
 kubectl apply -f redis-exporter-service.yaml
-kubectl apply -f prometheus-serviceaccount.yaml
+
 
 
 ```
