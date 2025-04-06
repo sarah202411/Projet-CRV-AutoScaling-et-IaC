@@ -61,6 +61,18 @@ chmod +x deploy.sh
 ./deploy.sh
 ```
 
+-------------------------Configuration Nginx  ----------------------------
+```bash
+cd frontend
+echo "Copie du fichier default.conf dans le pod à l'emplacement de nginx..."
+# Récupère dynamiquement le nom du pod frontend
+POD_NAME=$(kubectl get pods -l app=frontend -o jsonpath="{.items[0].metadata.name}")
+# Copie du fichier default.conf dans le pod à l'emplacement de nginx
+kubectl cp default.conf "$POD_NAME":/etc/nginx/conf.d/default.conf
+# Redémarre nginx pour appliquer la nouvelle configuration
+kubectl exec "$POD_NAME" -- nginx -s reload
+cd ..
+```
 
 
 Ce script déploie automatiquement :
