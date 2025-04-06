@@ -31,20 +31,16 @@ cd prometheus
 kubectl apply -f prometheus-configmap.yaml
 kubectl apply -f prometheus-deployment.yaml
 kubectl apply -f prometheus-service.yaml
-cd ..
+kubectl apply -f prometheus.yaml
+
 
 # 5. Déploiement de Node Exporter
 echo "Déploiement de Node Exporter..."
-cd prometheus
 kubectl apply -f node-exporter.yaml
 kubectl apply -f node-exporter-service.yaml
-cd ..
 
 # 6. Déploiement de Redis Exporter
 echo "Déploiement de Redis Exporter..."
-kubectl create namespace monitoring
-
-cd prometheus
 kubectl apply -f redis-exporter.yaml
 kubectl apply -f redis-exporter-service.yaml
 cd ..
