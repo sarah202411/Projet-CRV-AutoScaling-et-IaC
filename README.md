@@ -163,11 +163,7 @@ b. Fichier main.js (Backend)
 Redis URL : 127.0.0.1:6379
 API exposée sur http://<minikube_ip>:<NodePort du backend>
 ```
-### Modification du fichier default.conf (nginx)###
-```bash
-cd frontend/
 
-```
 
 ### 6. Monitoring avec Prometheus & Grafana
 a. Creer autre namespace
@@ -185,6 +181,8 @@ kubectl apply -f node-exporter.yaml
 kubectl apply -f node-exporter-service.yaml
 kubectl apply -f redis-exporter.yaml
 kubectl apply -f redis-exporter-service.yaml
+kubectl apply -f prometheus-serviceaccount.yaml
+
 
 ```
 Accès :
