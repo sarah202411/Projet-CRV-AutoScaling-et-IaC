@@ -168,6 +168,7 @@ cd Prometheus
 kubectl apply -f prometheus-configmap.yaml
 kubectl apply -f prometheus-deployment.yaml
 kubectl apply -f prometheus-service.yaml
+kubectl apply -f prometheus.yaml
 kubectl apply -f node-exporter.yaml
 kubectl apply -f node-exporter-service.yaml
 kubectl apply -f redis-exporter.yaml
