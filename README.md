@@ -263,6 +263,3 @@ projet-fullstack/
 └── README.md                # Documentation complète du projet
 
 ```
-
-Farah
-
