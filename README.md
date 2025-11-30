@@ -264,9 +264,5 @@ projet-fullstack/
 
 ```
 
+Farah
 
--------Auteurs--------
-
-$ Mouaci Sarah
-
-$ Naer Farah
